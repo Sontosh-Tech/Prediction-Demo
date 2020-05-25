@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+
+    <title>Admin Login</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static',filename='css/signin.css')}}" rel="stylesheet">
+  </head>
+
+  <body class="text-center" style="background-color: gray">
+    <form class="form-signin" action="/predict" method='post' style="background-color: powderblue">
+      <img class="mb-4" src="{{url_for('static',filename='img/login.svg')}}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">CO2 Emission Prediction</h1>
+      <label for="inputEmail" class="sr-only">ENGINE SIZE</label>
+      <input type="text" id="engine" name="engine" class="form-control" placeholder="Engine Size" required autofocus>
+      <label for="inputPassword" class="sr-only">CYLINDERS</label>
+      <input type="text" id="upassword" name="Cylinders" class="form-control" placeholder="Number of Cylinders" required>
+      <label for="inputPassword" class="sr-only">FUELCONSUMPTION_COMB</label>
+      <input type="text" id="upasswor" name="FUELCONSUMPTION_COMB" class="form-control" placeholder="Fuel Consumption Combo" required>
+    </br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="action" value="regression">Predict</button> 
+      </br>
+      <button href="/NLP-predict-tfidf" class="btn btn-lg btn-primary btn-block" type="submit" name="action" value="nlp" formnovalidate>Review Analysis</button>
+    </br>
+      <div>
+        <p>
+          <b>{{prediction}}</b>
+        </p>
+      </div>
+    </form>
+    
+    
+  </body>
+</html>

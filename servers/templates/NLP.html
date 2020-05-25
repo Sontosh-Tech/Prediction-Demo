@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="{{url_for('static',filename='img/favicon.ico')}}">
+
+    <title>Machine Learning</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{url_for('static',filename='css/signin.css')}}" rel="stylesheet">
+  </head>
+<body>
+
+<div class="text-center" style="background-color: gray">
+      <form class="form-signin" action="/NLP-predict-{{id}}" method='post' style="background-color: powderblue">
+      <img class="mb-4" src="{{url_for('static',filename='img/login.svg')}}" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Hotel Review Analysis</h1>
+      <label for="inputEmail" class="sr-only">Write a review</label>
+      <textarea rows="5" class="form-control" placeholder="Review" id="content" name="content" required data-validation-required-message="Please enter your content."></textarea>
+    </br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" name="action">Predict</button> 
+    </br>
+      <div>
+        <p>
+          {% if prediction==0 %}
+          <h2 color='red'>Bad Review</h2>
+          {% elif prediction==1 %}
+          <h2 color='red'>Good Review</h2>
+          {% endif %}
+        </p>
+      </div>
+      </form>
+</div>
+
+</body>
+</html>
